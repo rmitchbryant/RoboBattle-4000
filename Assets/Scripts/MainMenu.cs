@@ -20,4 +20,10 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void PlaySound(string name)
+    {
+        FindObjectOfType<AudioManager>().Play(name);
+
+    }
+
 }

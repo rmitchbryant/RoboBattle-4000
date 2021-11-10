@@ -23,6 +23,10 @@ public class SpawnPoint : MonoBehaviour
 
     public float countdownTime = 10f;
 
+    public VictoryScreen victoryScreen;
+
+    public SpawnEnemyMessage spawnMessage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +48,8 @@ public class SpawnPoint : MonoBehaviour
         // After the first enemey is destroyed
         if (enemy1Destroyed && !message1)
         {
-            Debug.Log("Number 2 arrives in " + countdownTime + " seconds!");
+            //Debug.Log("Number 2 arrives in " + countdownTime + " seconds!");
+            spawnMessage.SetUp();
 
             Invoke("SpawnEnemy2", countdownTime);
 
@@ -59,12 +64,18 @@ public class SpawnPoint : MonoBehaviour
 
         if (enemy2Destroyed && enemy2Spawned && !message2)
         {
-            Debug.Log("Can you handle number 3!?");
+            //Debug.Log("Can you handle number 3!?");
+            spawnMessage.SetUp();
 
             Invoke("SpawnEnemy3", countdownTime);
 
             message2 = true;
 
+        }
+
+        if (enemy3Spawned && GameObject.FindWithTag("Enemy 3") == null && message2)
+        {
+            victoryScreen.SetUp();
         }
         
     }

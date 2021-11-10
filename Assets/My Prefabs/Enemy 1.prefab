@@ -362,6 +362,8 @@ MonoBehaviour:
   healthBar: {fileID: 3234845558554158302}
   isDead: 0
   animator: {fileID: 3097592514495847797}
+  spawnPoint: {fileID: 3862125914145560705, guid: 8051d1f3ada848c49b3aafa87a6b54be,
+    type: 3}
   rotationSpeed: 10
   enemyFaction: PlayerFaction
   die: 1

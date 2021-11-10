@@ -29,7 +29,7 @@ public class PlayerCombat : MonoBehaviour
     public bool playerDead = false;
 
     GameObject enemy;
-
+    public GameOverScreen gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -122,6 +122,7 @@ public class PlayerCombat : MonoBehaviour
         if (!playerDead)
         {
             animator.Play("GetHit_Rifle");
+            FindObjectOfType<AudioManager>().Play("Hit");
         }
 
         if (currentHealth <= 0)
@@ -137,12 +138,17 @@ public class PlayerCombat : MonoBehaviour
 
         playerDead = true;
 
+        FindObjectOfType<AudioManager>().Play("Death");
+
         animator.Play("Death_Rifle");
 
         GetComponent<CharacterController>().enabled = false;
         GetComponent<ThirdPersonMovement>().enabled = false;
         GetComponentInChildren<PlayerLookDirection>().enabled = false;
         GetComponent<CapsuleCollider>().enabled = false;
+
+        gameOver.SetUp();
+        
 
     }
 

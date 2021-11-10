@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour, BehaviorAI
 
     public Animator animator;
     GameObject target = null;
+    public SpawnPoint spawnPoint;
 
     public float rotationSpeed = 5f;
 
@@ -106,6 +107,7 @@ public class EnemyController : MonoBehaviour, BehaviorAI
         healthBar.SetHealth(currentHealth);
 
         animator.Play("GetHit_Rifle");
+        FindObjectOfType<AudioManager>().Play("EnemyHit");
 
         // Kill the enemy once health runs out
         if (currentHealth <= 0)
@@ -118,6 +120,7 @@ public class EnemyController : MonoBehaviour, BehaviorAI
     {
         Debug.Log("Enemy died.");
 
+        FindObjectOfType<AudioManager>().Play("Death");
         animator.Play("Death_Rifle");
 
         isDead = true;
@@ -126,7 +129,8 @@ public class EnemyController : MonoBehaviour, BehaviorAI
         GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
+
 
         Destroy(gameObject);
 
