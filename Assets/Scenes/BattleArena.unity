@@ -49851,15 +49851,30 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PlayerFaction
       objectReference: {fileID: 0}
+    - target: {fileID: 3608094305155081496, guid: f17a48c2ce447fc4380922a53ae4eb4f,
+        type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608094305155081496, guid: f17a48c2ce447fc4380922a53ae4eb4f,
+        type: 3}
+      propertyPath: field of view
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608094305155081496, guid: f17a48c2ce447fc4380922a53ae4eb4f,
+        type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3608094305155081503, guid: f17a48c2ce447fc4380922a53ae4eb4f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.44
+      value: 38.7
       objectReference: {fileID: 0}
     - target: {fileID: 3608094305155081503, guid: f17a48c2ce447fc4380922a53ae4eb4f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.67
+      value: -9.3
       objectReference: {fileID: 0}
     - target: {fileID: 3608094305155081503, guid: f17a48c2ce447fc4380922a53ae4eb4f,
         type: 3}
